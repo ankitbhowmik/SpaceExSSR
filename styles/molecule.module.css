@@ -1,0 +1,49 @@
+/* styles for filter component */
+.m-filter-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    justify-items: center;
+}
+.m-filter-list button{
+    width: 100px;
+}
+.m-filter-text{
+    border-bottom: 2px solid lightgray;
+    max-width: 160px;
+    margin: 20px auto 15px;
+    text-align: center;
+    font-size: 1.2em;
+    color: darkslategrey;
+}
+
+
+/* styled for Launch component */
+.m-launch-name{
+    color: darkblue;
+    font-size: 1.4em;
+    font-weight:bold;
+    margin: 15px 0;
+}
+
+.m-text{
+    font-size: 1.1em;
+    color: inherit;
+    font-weight: bold;
+}
+
+.m-launch-detail{
+    display: flex;
+    flex-direction: column;
+}
+.m-launch-detail .blue{
+    color: #1A5276;
+}
+.m-launch-detail ul{
+    margin: 10px 0;
+}
+.m-set{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
+}

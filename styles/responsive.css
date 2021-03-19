@@ -1,0 +1,26 @@
+.main-content{
+    margin-top: 50px;
+    display: grid;
+    grid-gap:20px;
+    margin-bottom: 70px;
+}
+.responsive-cards{
+    display: grid;
+    grid-gap: 20px;
+}
+
+
+@media (min-width:700px){
+    .main-content{
+        grid-template-columns: 1fr 4fr;
+    }
+    .responsive-cards{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width:1024px){
+    .responsive-cards{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
