@@ -1,8 +1,10 @@
 import Filter from "../components/organism/Filter";
 import Launch from "../components/organism/Launch";
 
-export const getStaticProps = async ()=>{
-	const res = await fetch("https://api.spaceXdata.com/v3/launches?limit=100");
+export const getServerSideProps = async (context)=>{
+	const {launch_success, land_success, launch_year} = context.query;
+	const url = `https://api.spaceXdata.com/v3/launches?limit=100${launch_success ? `&launch_success=${launch_success}`: ""}${land_success ? `&land_success=${land_success}`: ""}${launch_year ? `&launch_year=${launch_year}`: ""}`;
+	const res = await fetch(url);
 	const data = await res.json();
 	const payload = data.map( item => ({
 		flight_number: item.flight_number,
@@ -20,13 +22,14 @@ export const getStaticProps = async ()=>{
 }
 
 export default function Home({launches}) {
-  return (
+  	return (
     <div className="main-content">
       	<div>
         	<Filter/>
       	</div>
       	<article>
 			<div className="responsive-cards">
+				{launches.length === 0 && <h1>No launches found according to your filters.</h1>}
 				{
 					launches.map(item=> (
 						<Launch

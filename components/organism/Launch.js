@@ -9,7 +9,6 @@ const Launch = (props) => {
         launch_success,
         land_success,
         mission_patch_small} = props;
-
     return (
         <div className="card">
             <Image width={256} height={256} className="img" alt={mission_name} src={mission_patch_small}/>
@@ -23,8 +22,8 @@ const Launch = (props) => {
                 </div>
 
                 <Set field="Launch Year" value={launch_year}/>
-                <Set field="Successfull Launch" value={launch_success}/>
-                <Set field="Successfull Land" value={land_success}/>
+                <Set field="Successfull Launch" value={launch_success ? "true" : "false"}/>
+                <Set field="Successfull Land" value={land_success ? "true" : "false"}/>
 
             </div>
 
